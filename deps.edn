@@ -1,5 +1,5 @@
 {:paths ["src"]
  :aliases
  {:release
-  {:extra-deps {mhuebert/deps-lib {:mvn/version "0.1.4"}}
-   :main-opts ["-m" "deps-lib.release"]}}}
+  {:extra-deps {mhuebert/deps-library {:mvn/version "0.1.4"}}
+   :main-opts ["-m" "deps-library.release"]}}}
