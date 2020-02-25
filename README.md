@@ -102,3 +102,18 @@ write a tiny macro that runs at compile-time and reads from our env:
 ;; at compile-time, enabling DCE
 ```
 
+# Dev
+
+## Releases
+
+To tag a version for release:
+
+```
+clj -A:release tag <patch, minor, or major>
+```
+
+To deploy:
+
+```
+clj -A:release
+```

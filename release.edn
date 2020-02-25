@@ -1,0 +1,4 @@
+{:group-id "mhuebert"
+ :artifact-id "shadow-env"
+ :version "0.1.0"
+ :scm-url "https://github.com/mhuebert/deps-lib"}
