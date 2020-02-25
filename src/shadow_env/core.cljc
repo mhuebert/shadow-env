@@ -6,8 +6,9 @@
 
 #?(:clj
    (defn- read-env [build-state read-fn]
-     (let [{:keys [clj cljs]} (read-fn build-state)]
-       (assoc clj ::cljs cljs))))
+     (let [{:keys [clj cljs common]} (read-fn build-state)]
+       (-> (merge common clj)
+           (assoc ::cljs (merge common cljs))))))
 
 #?(:clj
    (defn- invalidate-var

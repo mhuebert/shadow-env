@@ -79,8 +79,26 @@ common, and secret (ie. not in source control).
                           "client.edn"]
                          (map #(some-> (io/resource %)
                                        (aero/read-config aero-config))))]
-       {:clj (merge common server secret)
-        :cljs (merge common client)})))
+       {:common common
+        :clj (merge server secret)
+        :cljs client})))
 
 (env/link get `read-env)
 ```
+
+## Dead code elimination (DCE)
+
+ClojureScript can remove unused code automatically based on compile-time constants.
+For this to work, we can't read from our environment map at runtime - instead, we can
+write a tiny macro that runs at compile-time and reads from our env:
+
+```clj
+(env/link get `read-env)
+
+(defmacro get-static [k]
+  (clojure.core/get get k))
+
+;; ClojureScript code can call (get-static :some/key) and the value will be replaced
+;; at compile-time, enabling DCE
+```
+
