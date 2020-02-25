@@ -1,5 +1,7 @@
 # shadow-env
 
+![Version Badge](https://img.shields.io/clojars/v/mhuebert/shadow-env)
+
 Clojure(Script) environment injection with shadow-cljs live-reload support
 
 ----
