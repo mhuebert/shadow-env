@@ -1,0 +1,4 @@
+{:paths ["src"]
+ :deps
+ {net.cgrand/macrovich {:mvn/version "0.2.1"}
+  chivorcam {:mvn/version "1.0.0"} }}
