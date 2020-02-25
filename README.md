@@ -35,8 +35,9 @@ in your app's env namespace:
 ;; (which will be `nil` initially, before compile starts)
 #?(:clj
     (defn read-env [build-state]
-       {:clj  <exposed to Clojure>
-        :cljs <exposed to ClojureScript>})
+       {:common <exposed everywhere>
+        :clj    <exposed to Clojure>
+        :cljs   <exposed to ClojureScript>})
 
 ;; define & link a new var to your reader function.
 ;; you must pass a fully qualified symbol here, so syntax-quote (`) is useful.
